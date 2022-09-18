@@ -1,8 +1,14 @@
 import React from 'react'
 
-const products: (string| number)[] = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+const products: (string| number)[] = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+type objectCheck = {name: string; id: number };
 
 export default function Products() {
+
+    const detailsPrint = (user: objectCheck) => {
+        console.log(user);
+    }
 
     const productClick = (a: (number | any ), b: number, d?: any ,isClick: boolean = false): number => {
 
@@ -44,6 +50,7 @@ export default function Products() {
                                 </div>
                                 <div className="flex justify-between items-center">
                                     <span className="text-3xl font-bold text-gray-900 dark:text-white">${data}</span>
+                                    <button onClick={()=>detailsPrint({name: 'kayes', id:2})}> User Details </button>
                                     <button onClick={() => productClick( data , 3 , data)} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</button>
                                 </div>
                             </div>
