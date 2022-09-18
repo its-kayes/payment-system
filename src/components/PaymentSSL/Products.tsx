@@ -1,8 +1,20 @@
 import React from 'react'
 
-const products: (string| number)[] = ["d", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+const products: (string| number)[] = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 export default function Products() {
+
+    const productClick = (a: (number | any ), b: number, d?: any ,isClick: boolean = false): number => {
+
+        if(a || b ) {
+            console.log(isClick= true);
+        }else {
+            console.log(isClick);
+        }
+
+        console.log(a * b, d);
+        return a+ b;
+    }
 
     products.push()
     
@@ -32,7 +44,7 @@ export default function Products() {
                                 </div>
                                 <div className="flex justify-between items-center">
                                     <span className="text-3xl font-bold text-gray-900 dark:text-white">${data}</span>
-                                    <a href="#3" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</a>
+                                    <button onClick={() => productClick( data , 3 , data)} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</button>
                                 </div>
                             </div>
                         </div>
